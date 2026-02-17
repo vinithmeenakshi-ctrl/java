@@ -1,0 +1,31 @@
+basic4.java
+
+
+
+import java.util.Scanner;
+
+public class ScholarshipCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+       
+        double tuitionFees = sc.nextDouble();
+        double scholarshipPercent = sc.nextDouble();
+        double examFee = sc.nextDouble();
+        double libraryFee = sc.nextDouble();
+
+      
+        double scholarshipAmount = tuitionFees * scholarshipPercent / 100;
+
+
+        double feesAfterScholarship = tuitionFees - scholarshipAmount;
+
+
+        double finalPayable = feesAfterScholarship + examFee + libraryFee;
+
+      
+        System.out.println("Final Payable Fee = " + finalPayable);
+
+        sc.close();
+    }
+}
