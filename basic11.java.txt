@@ -1,0 +1,25 @@
+basic11.java
+
+
+import java.util.Scanner;
+
+public class TransportFeeCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int distance = sc.nextInt();
+        int ratePerKm = sc.nextInt();
+        int maintenance = sc.nextInt();
+        int allowance = sc.nextInt();
+        int subsidy = sc.nextInt();
+
+        int transportFee = (distance * ratePerKm) 
+                           + maintenance 
+                           + allowance 
+                           - subsidy;
+
+        System.out.println("Total Transport Fee = " + transportFee);
+
+        sc.close();
+    }
+}
