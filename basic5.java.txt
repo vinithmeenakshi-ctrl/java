@@ -1,0 +1,28 @@
+basic5.java
+
+
+import java.util.Scanner;
+
+public class Restaurant{
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        double totalBill = sc.nextDouble();
+        double servicePercent = sc.nextDouble();
+        double gstPercent = sc.nextDouble();
+        double numberOfPeople = sc.nextDouble();
+
+        double serviceAmount = totalBill * servicePercent / 100;
+        double afterBill = totalBill + serviceAmount;
+
+        double gstAmount = afterBill * gstPercent / 100;
+        double finalAmount = afterBill + gstAmount;
+
+        double amountPerPerson = finalAmount / numberOfPeople;
+
+        System.out.println("Amount per person: " + amountPerPerson);
+
+        sc.close();
+    }
+}
