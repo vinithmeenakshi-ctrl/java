@@ -1,0 +1,85 @@
+problem8.java
+
+ import java.util.Scanner;
+    public class problem8 {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+
+        String locationTier = sc.nextLine();
+        int squareFootage = sc.nextInt();
+        int propertyAge = sc.nextInt();
+        int amenityScore = sc.nextInt();
+
+        double basePricePerSqFt = 0;
+        double ageAdjustmentPercent = 0;
+        double amenityBonus = 0;
+        if (locationTier.equals("Prime")) {
+            basePricePerSqFt = 400;
+        } else if (locationTier.equals("Urban")) {
+            basePricePerSqFt = 300;
+        } else if (locationTier.equals("Suburban")) {
+            basePricePerSqFt = 180;
+        } else {
+            basePricePerSqFt = 100; 
+        }
+
+
+        if (propertyAge >= 0 && propertyAge <= 5) {
+            ageAdjustmentPercent = 0;
+        } else if (propertyAge <= 10) {
+            ageAdjustmentPercent = -5;
+        } else if (propertyAge <= 15) {
+            ageAdjustmentPercent = -10;
+        } else if (propertyAge <= 25) {
+            ageAdjustmentPercent = -15;
+        } else if (propertyAge <= 30) {
+            ageAdjustmentPercent = -20;
+        } else {
+            ageAdjustmentPercent = -25;
+        }
+
+
+        double baseValue = squareFootage * basePricePerSqFt;
+        double adjustedValue = baseValue + (baseValue * ageAdjustmentPercent / 100);
+
+        if (amenityScore >= 80) {
+            amenityBonus = baseValue * 0.10;
+        } else if (amenityScore >= 60) {
+            amenityBonus = baseValue * 0.05;
+        } else if (amenityScore >= 40) {
+            amenityBonus = baseValue * 0.02;
+        } else {
+            amenityBonus = 0;
+        }
+        double finalValue = adjustedValue + amenityBonus;
+
+
+        String marketCategory;
+
+        if ((locationTier.equals("Prime") || locationTier.equals("Urban")) 
+                && propertyAge < 15) {
+            marketCategory = "Hot";
+        } else if (locationTier.equals("Suburban")) {
+            marketCategory = "Stable";
+        } else {
+            marketCategory = "Slow";
+        }
+
+
+        System.out.println("Location Tier: " + locationTier);
+        System.out.println("Square Footage: " + squareFootage + " sq ft");
+        System.out.println("Property Age: " + propertyAge + " years");
+        System.out.println("Amenity Score: " + amenityScore);
+        System.out.println("Base Price Per Sq Ft: $" + basePricePerSqFt);
+        System.out.println("Age Adjustment: " + ageAdjustmentPercent + "%");
+        System.out.println("Amenity Bonus: $" + amenityBonus);
+        System.out.println("Estimated Property Value: $" + finalValue);
+        System.out.println("Market Category: " + marketCategory);
+
+        sc.close();
+    }
+}
+
