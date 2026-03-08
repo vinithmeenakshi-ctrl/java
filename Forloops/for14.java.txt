@@ -1,0 +1,72 @@
+for14.java
+
+package forloop;
+import java.util.Scanner;
+
+public class for14 {
+    
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        double total = 0;
+        int overdue = 0;
+
+        for (int i = 1; i <= n; i++) {
+            String type = sc.next();
+            int days = sc.nextInt();
+
+            double rate = 0;
+            double cap = 0;
+
+            if (type.equals("Regular")) {
+                rate = 0.5;
+                cap = 10.0;
+            }
+            if (type.equals("Reference")) {
+                rate = 1.0;
+                cap = 20.0;
+            }
+            if (type.equals("Magazine")) {
+                rate = 0.25;
+                cap = 5.0;
+            }
+
+            double calculated = days * rate;
+            double actual = calculated;
+            String capApplied = "No";
+
+            if (calculated > cap) {
+                actual = cap;
+                capApplied = "Yes";
+            }
+
+            if (days > 0) {
+                overdue++;
+            }
+
+            total += actual;
+
+            System.out.println("Book " + i + ": " + type);
+            System.out.println("Days Late: " + days);
+            System.out.println("Daily Fine: $" + rate);
+            System.out.println("Calculated Fine: $" + calculated);
+            System.out.println("Actual Fine: $" + actual);
+            System.out.println("Cap Applied: " + capApplied);
+
+            if (i < n) {
+                System.out.println();
+            }
+        }
+
+        double avg = total / n;
+
+        System.out.println();
+        System.out.println("Total Books: " + n);
+        System.out.println("Total Fines Collected: $" + total);
+        System.out.println("Books Overdue: " + overdue);
+        System.out.println("Average Fine: $" + String.format("%.2f", avg));
+    }
+
+}
