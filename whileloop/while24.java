@@ -1,0 +1,24 @@
+package whileloop;
+import java.util.Scanner;
+
+public class while24 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        int x = a;
+        int y = b;
+
+        while (x != y) {
+            if (x > y) {
+                x = x - y;
+            } else {
+                y = y - x;
+            }
+        }
+
+        System.out.println("HCF of " + a + " and " + b + " = " + x);
+    }
+}
+
