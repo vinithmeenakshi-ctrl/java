@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class f2{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+
+        int rows = sc.nextInt();
+        int seats = sc.nextInt();
+
+        for(int i=1;i<=rows;i++){
+            System.out.println("row"+i+" ");
+
+
+        for(int j=1;j<=seats;j++){
+            System.out.println("seats"+j+" ");
+        
+        if(j>seats){
+            System.out.println(" ");
+        }
+    }
+        
+        System.out.println();
+
+
+    }
+    int total = rows*seats;
+    System.out.println();
+   System.out.println("Total Seats: "+total);
+    sc.close();
+
+
+
+    }
+}
