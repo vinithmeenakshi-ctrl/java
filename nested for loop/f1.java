@@ -1,0 +1,37 @@
+
+import java.util.Scanner;
+
+public class f1 {
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+        int colums = sc.nextInt();
+
+        System.out.println("Multiplication table( "+ rows +"x"+ colums +" ):");
+
+        for(int i=1;i<=colums;i++){
+            System.out.println(i+" ");
+        }
+        System.out.println();
+
+        for(int i=1;i<=rows;i++){
+            System.out.println(i+" ");
+        
+
+        for(int j=1;j<=colums;j++){
+            System.out.print((i*j) +" ");
+        }
+        System.out.println();
+        sc.close();
+
+
+
+
+
+
+    }
+
+
+    }
+    
+}
