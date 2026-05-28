@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class PrimeRangeDoWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int start, end;
+
+        System.out.print("Enter start and end: ");
+        start = sc.nextInt();
+        end = sc.nextInt();
+
+        do {
+            int i = 2;
+            boolean isPrime = true;
+
+            if (start <= 1) isPrime = false;
+
+            if (isPrime) {
+                do {
+                    if (start % i == 0 && i != start) {
+                        isPrime = false;
+                        break;
+                    }
+                    i++;
+                } while (i <= start / 2);
+            }
+
+            if (isPrime)
+                System.out.print(start + " ");
+
+            start++;
+        } while (start <= end);
+    }
+}
