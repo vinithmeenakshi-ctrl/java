@@ -1,0 +1,15 @@
+public class BinaryToDecimal {
+    public static void main(String[] args) {
+        int binary = 1011;
+        int decimal = 0, base = 1;
+
+        do {
+            int lastDigit = binary % 10;
+            decimal += lastDigit * base;
+            base *= 2;
+            binary /= 10;
+        } while (binary != 0);
+
+        System.out.println("Decimal: " + decimal);
+    }
+}
