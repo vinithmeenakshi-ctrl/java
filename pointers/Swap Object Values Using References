@@ -1,0 +1,24 @@
+class Box {
+    int value;
+    Box(int value) {
+        this.value = value;
+    }
+}
+
+public class Main {
+    static void swap(Box a, Box b) {
+        int temp = a.value;
+        a.value = b.value;
+        b.value = temp;
+    }
+
+    public static void main(String[] args) {
+        Box x = new Box(10);
+        Box y = new Box(20);
+
+        swap(x, y);
+
+        System.out.println(x.value);
+        System.out.println(y.value);
+    }
+}
