@@ -1,0 +1,23 @@
+class Data {
+    int value;
+}
+
+public class Main {
+    static void swap(Data a, Data b) {
+        int temp = a.value;
+        a.value = b.value;
+        b.value = temp;
+    }
+
+    public static void main(String[] args) {
+        Data x = new Data();
+        Data y = new Data();
+
+        x.value = 10;
+        y.value = 20;
+
+        swap(x, y);
+
+        System.out.println(x.value + " " + y.value);
+    }
+}
