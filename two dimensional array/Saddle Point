@@ -1,0 +1,38 @@
+public class SaddlePoint {
+
+    public static void main(String[] args) {
+
+        int[][] a = {
+                {1,2,3},
+                {4,5,6},
+                {7,8,9}
+        };
+
+        for(int i=0;i<a.length;i++){
+
+            int minCol=0;
+
+            for(int j=1;j<a[0].length;j++){
+                if(a[i][j]<a[i][minCol])
+                    minCol=j;
+            }
+
+            boolean saddle=true;
+
+            for(int k=0;k<a.length;k++){
+
+                if(a[k][minCol]>a[i][minCol]){
+                    saddle=false;
+                    break;
+                }
+            }
+
+            if(saddle){
+                System.out.println(a[i][minCol]);
+                return;
+            }
+        }
+
+        System.out.println("No Saddle Point");
+    }
+}
